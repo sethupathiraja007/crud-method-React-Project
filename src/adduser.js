@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 
 export default function Adduser(props) {
+  // Initial user data
   const initial = { id: null, username: "", password: "" };
   const [initials, setinitials] = useState(initial);
+
+  // Function to update form input values
   const click = (event) => {
-    const {name, value} = event.target;
+    const { name, value } = event.target;
     setinitials({ ...initials, [name]: value });
   };
+
   return (
     <div>
       <form
@@ -27,7 +31,7 @@ export default function Adduser(props) {
             name="username"
             value={initials.username}
             onChange={click}
-          ></input>
+          />
           <label>
             <b>PASSWORD</b>
           </label>
@@ -37,12 +41,11 @@ export default function Adduser(props) {
             name="password"
             value={initials.password}
             onChange={click}
-          ></input>
+          />
           <br />
           <br />
           <br />
           <div className="btn1">
-            {" "}
             <button className="btn btn-success">ADD USER</button>
           </div>
         </div>

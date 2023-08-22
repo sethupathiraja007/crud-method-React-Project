@@ -1,4 +1,5 @@
 import React from "react";
+
 export default function Table(props) {
   return (
     <div>
@@ -18,17 +19,20 @@ export default function Table(props) {
                   <td>{user.username}</td>
                   <td>{user.password}</td>
                   <td id="d">
-                    <button type="button" className="btn btn-warning" onClick={()=>{
-                    props.editRow(user)  
-                    }}>
-                      EDIT 
+                    <button
+                      type="button"
+                      className="btn btn-warning"
+                      onClick={() => {
+                        props.editRow(user);
+                      }}
+                    >
+                      EDIT
                     </button>
                     <button
                       type="button"
                       className="btn btn-danger"
                       onClick={() => {
                         props.deleteuser(user.id);
-                        
                       }}
                     >
                       DELETE
@@ -49,3 +53,4 @@ export default function Table(props) {
     </div>
   );
 }
+
